@@ -11,6 +11,19 @@ gunzip -c /tmp/image-name.img.gz | sudo docker load
 ```
 
 
+# Git
+
+```bash
+# find which branches contain a commit
+git branch --contains <commit>
+```
+
+```bash
+# revert last commit and keep modified files
+git reset --soft HEAD^
+```
+
+
 # Java
 
 ```bash
