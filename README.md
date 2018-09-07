@@ -1,3 +1,16 @@
+# Docker
+
+```bash
+# save image image-name
+sudo docker save image-name | gzip > /tmp/image-name.img.gz
+```
+
+```bash
+# load image image-name
+gunzip -c /tmp/image-name.img.gz | sudo docker load 
+```
+
+
 # Java
 
 ```bash
