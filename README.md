@@ -71,3 +71,12 @@ cat local.txt | ssh user@example.com "cat > /tmp/remote.txt"
 # copy file from remote to local without scp
 ssh user@example.com "cat /tmp/remote.txt" > local.txt
 ```
+
+```bash
+# SSH's X11 Forwarding (for instance xterm)
+ssh -X user@example.com "xterm"
+
+# the remote machine must have:
+# 1. sshd X11 Forwarding enabled ("X11Forwarding yes" at /etc/ssh/sshd_config)
+# 2. xorg-x11-xauth package installed (yum install xorg-x11-xauth)
+```
