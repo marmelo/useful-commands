@@ -1,4 +1,12 @@
-# Docker
+# Commands
+
+- [Docker](#docker)
+- [Git](#git)
+- [Java](#java)
+- [SSH](#ssh)
+
+
+## Docker
 
 ```bash
 # save image image-name
@@ -11,7 +19,7 @@ gunzip -c /tmp/image-name.img.gz | sudo docker load
 ```
 
 
-# Git
+## Git
 
 ```bash
 # find which branches contain a commit
@@ -24,7 +32,7 @@ git reset --soft HEAD^
 ```
 
 
-# Java
+## Java
 
 ```bash
 # get thread dump for PID 12345
@@ -52,7 +60,7 @@ jcmd 12345 GC.run
 ```
 
 
-# SSH
+## SSH
 
 ```bash
 # copy file from local to remote without scp
