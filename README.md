@@ -50,3 +50,16 @@ jmap -dump:format=b,file=/tmp/heap.bin 12345
 # force garbage collection for PID 12345
 jcmd 12345 GC.run
 ```
+
+
+# SSH
+
+```bash
+# copy file from local to remote without scp
+cat local.txt | ssh user@example.com "cat > /tmp/remote.txt"
+```
+
+```bash
+# copy file from remote to local without scp
+ssh user@example.com "cat /tmp/remote.txt" > local.txt
+```
