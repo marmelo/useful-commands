@@ -59,6 +59,16 @@ jmap -dump:format=b,file=/tmp/heap.bin 12345
 jcmd 12345 GC.run
 ```
 
+```bash
+# enable JMX remote monitoring
+java
+  -Dcom.sun.management.jmxremote
+  -Dcom.sun.management.jmxremote.port=9010
+  -Dcom.sun.management.jmxremote.authenticate=false
+  -Dcom.sun.management.jmxremote.ssl=false
+  -Dcom.sun.management.jmxremote.local.only=false
+  -jar app.jar
+```
 
 ## SSH
 
