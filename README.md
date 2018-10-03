@@ -32,6 +32,17 @@ git reset --soft HEAD^
 ```
 
 
+## HTTP
+
+``` bash
+# perform 1000 HTTP requests using 5 concurrent threads
+ab -n 1000 -c 5 http://localhost:8080/api/version
+
+# this requires Apache HTTP server benchmarking tool which is available though
+# package httpd-tools in RHEL/CentOS and apache2-utils in Debian/Ubuntu
+```
+
+
 ## Java
 
 ```bash
@@ -69,6 +80,7 @@ java
   -Dcom.sun.management.jmxremote.local.only=false
   -jar app.jar
 ```
+
 
 ## SSH
 
