@@ -3,6 +3,7 @@
 - [Docker](#docker)
 - [Git](#git)
 - [Java](#java)
+- [Socat](#socat)
 - [SSH](#ssh)
 
 
@@ -81,6 +82,12 @@ java
   -jar app.jar
 ```
 
+## Socat
+
+```bash
+# forward port without iptables
+socat TCP4-LISTEN:8080,fork TCP4:1.1.1.1:8080
+```
 
 ## SSH
 
