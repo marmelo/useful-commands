@@ -1,11 +1,23 @@
 # Commands
 
+- [Bash](#bash)
 - [Docker](#docker)
 - [Git](#git)
 - [Java](#java)
-- [Socat](#socat)
 - [SSH](#ssh)
 
+
+## Bash
+
+```bash
+# forward port without iptables
+socat TCP4-LISTEN:8080,fork TCP4:1.1.1.1:8080
+```
+
+```bash
+# create a RAM disk
+mount -t tmpfs -o size=512m tmpfs /mnt/tmpfs
+```
 
 ## Docker
 
@@ -82,12 +94,6 @@ java
   -jar app.jar
 ```
 
-## Socat
-
-```bash
-# forward port without iptables
-socat TCP4-LISTEN:8080,fork TCP4:1.1.1.1:8080
-```
 
 ## SSH
 
