@@ -5,6 +5,7 @@
 - [Git](#git)
 - [Java](#java)
 - [SSH](#ssh)
+- [Tor](#tor)
 
 
 ## Bash
@@ -114,4 +115,30 @@ ssh -X user@example.com "xterm"
 # the remote machine must have:
 # 1. sshd X11 Forwarding enabled ("X11Forwarding yes" at /etc/ssh/sshd_config)
 # 2. xorg-x11-xauth package installed (yum install xorg-x11-xauth)
+```
+
+```
+# SSH socks5 proxy
+ssh -D 9050 user@domain.com
+
+curl --socks5 127.0.0.1:9050 ipinfo.io
+proxychains curl ipinfo.io
+proxychains firefox
+```
+
+
+## Tor
+
+```bash
+# create Tor connection to explicit country exit node
+echo -e "ExitNodes {us}\nStrictNodes 1" | tor -f -
+
+# use curl
+curl --socks5 127.0.0.1:9050 ipinfo.io
+
+# use torsocks
+torsocks curl ipinfo.io
+
+## use proxychains
+proxychains curl ipinfo.io
 ```
