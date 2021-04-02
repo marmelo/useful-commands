@@ -4,6 +4,7 @@
 - [Docker](#docker)
 - [Git](#git)
 - [Java](#java)
+- [Nmap](#nmap)
 - [SSH](#ssh)
 - [Tor](#tor)
 
@@ -95,6 +96,39 @@ java
   -jar app.jar
 ```
 
+
+## Nmap
+
+```bash
+# scan open ports
+nmap 192.168.1.1
+```
+
+```bash
+# scan open ports with service info
+nmap -sV 192.168.1.254
+```
+
+```bash
+# scan subnet for devices
+nmap -sn 192.168.1.1-255
+nmap -sn 192.168.1.1/24
+```
+
+```bash
+# scan subnet for ports
+nmap -p22,80,443 192.168.1.1/24
+```
+
+```bash
+# scan subnet for ports with service info
+nmap -sV -p22,80,443 192.168.1.1/24
+```
+
+```bash
+# reverse lookup subnet
+nmap --dns-servers 8.8.4.4,8.8.8.8 -sL 209.132.183.105/24
+```
 
 ## SSH
 
