@@ -6,6 +6,7 @@
 - [Java](#java)
 - [Nmap](#nmap)
 - [SSH](#ssh)
+- [Tmux](#tmux)
 - [Tor](#tor)
 
 
@@ -151,7 +152,7 @@ ssh -X user@example.com "xterm"
 # 2. xorg-x11-xauth package installed (yum install xorg-x11-xauth)
 ```
 
-```
+```bash
 # SSH socks5 proxy
 ssh -D 9050 user@domain.com
 
@@ -160,19 +161,65 @@ proxychains curl ipinfo.io
 proxychains firefox
 ```
 
+## Tmux
+
+```bash
+# create named session
+tmux new -s session-name
+```
+
+```bash
+# dettach session (inside tmux)
+Ctrl+b d
+```
+
+```bash
+# list session
+tmux ls
+```
+
+```bash
+# attach session
+tmux attach -t session-name
+tmux attach -t 0
+```
+
+```bash
+# windows
+Ctrl+b c Create a new window (with shell)
+Ctrl+b w Choose window from a list
+Ctrl+b 0 Switch to window 0 (by number )
+Ctrl+b , Rename the current window
+```
+
+```bash
+# panes
+Ctrl+b % Split current pane horizontally into two panes
+Ctrl+b " Split current pane vertically into two panes
+Ctrl+b o Go to the next pane
+Ctrl+b ; Toggle between the current and previous pane
+Ctrl+b x Close the current pane
+```
+
 
 ## Tor
 
 ```bash
 # create Tor connection to explicit country exit node
 echo -e "ExitNodes {us}\nStrictNodes 1" | tor -f -
+```
 
+```bash
 # use curl
 curl --socks5 127.0.0.1:9050 ipinfo.io
+```
 
+```bash
 # use torsocks
 torsocks curl ipinfo.io
+```
 
-## use proxychains
+```bash
+# use proxychains
 proxychains curl ipinfo.io
 ```
