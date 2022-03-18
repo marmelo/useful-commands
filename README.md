@@ -4,6 +4,7 @@
 - [Docker](#docker)
 - [Git](#git)
 - [Java](#java)
+- [Mail](#mail)
 - [Nmap](#nmap)
 - [SSH](#ssh)
 - [Tmux](#tmux)
@@ -97,6 +98,12 @@ java
   -jar app.jar
 ```
 
+## Mail
+
+```bash
+# test smtp server
+swaks -s server -f from -t to -au user -ap pass
+```
 
 ## Nmap
 
