@@ -9,6 +9,7 @@
 - [SSH](#ssh)
 - [Tmux](#tmux)
 - [Tor](#tor)
+- [YouTube](#youtube)
 
 
 ## Bash
@@ -229,4 +230,12 @@ torsocks curl ipinfo.io
 ```bash
 # use proxychains
 proxychains curl ipinfo.io
+```
+
+
+## YouTube
+
+```bash
+# download playlist to mp3
+youtube-dl -x --audio-format="mp3" --audio-quality="160k" --add-metadata --continue "https://www.youtube.com/playlist?list=PL7x1NEEwqJNvSGCXac6zGxERF9CDcsOK9"
 ```
