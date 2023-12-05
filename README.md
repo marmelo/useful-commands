@@ -257,6 +257,10 @@ torsocks curl ipinfo.io
 proxychains curl ipinfo.io
 ```
 
+```bash
+# use chromium
+chromium --user-data-dir=/tmp/x --proxy-server="socks5://127.0.0.1:9050"
+```
 
 ## YouTube
 
