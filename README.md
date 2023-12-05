@@ -6,7 +6,7 @@
 - [Java](#java)
 - [Mail](#mail)
 - [Nmap](#nmap)
-- [PostgreSQL](#postgresl)
+- [PostgreSQL](#postgresql)
 - [SSH](#ssh)
 - [Tmux](#tmux)
 - [Tor](#tor)
