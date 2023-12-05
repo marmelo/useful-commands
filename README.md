@@ -6,6 +6,7 @@
 - [Java](#java)
 - [Mail](#mail)
 - [Nmap](#nmap)
+- [PostgreSQL](#postgresl)
 - [SSH](#ssh)
 - [Tmux](#tmux)
 - [Tor](#tor)
@@ -138,6 +139,30 @@ nmap -sV -p22,80,443 192.168.1.1/24
 # reverse lookup subnet
 nmap --dns-servers 8.8.4.4,8.8.8.8 -sL 209.132.183.105/24
 ```
+
+
+## PostgreSQL
+
+```sql
+# show running queries
+SELECT procpid, age(clock_timestamp(), query_start), usename, current_query 
+FROM pg_stat_activity 
+WHERE current_query != '<IDLE>' AND current_query NOT ILIKE '%pg_stat_activity%' 
+ORDER BY query_start desc;
+```
+
+```sql
+# terminate connections
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE pg_stat_activity.datname = '<database name>';
+```
+
+```sql
+# copy database
+CREATE DATABASE "new" WITH TEMPLATE "old";
+```
+
 
 ## SSH
 
