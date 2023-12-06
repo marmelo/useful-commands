@@ -7,6 +7,7 @@
 - [Mail](#mail)
 - [Nmap](#nmap)
 - [PostgreSQL](#postgresql)
+- [Sed](#sed)
 - [SSH](#ssh)
 - [Tmux](#tmux)
 - [Tor](#tor)
@@ -161,6 +162,23 @@ WHERE pg_stat_activity.datname = '<database name>';
 ```sql
 # copy database
 CREATE DATABASE "new" WITH TEMPLATE "old";
+```
+
+
+## Sed
+
+```bash
+# remove first line of file
+sed -i '1d' file.txt
+
+# remove second line of file
+sed -i '2d' file.txt
+
+# remove first and second line of file
+sed -i '1d;2d' file.txt
+
+# remove last line of file
+sed -i '$d' file.txt
 ```
 
 
