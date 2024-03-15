@@ -212,6 +212,11 @@ proxychains curl ipinfo.io
 proxychains firefox
 ```
 
+```bash
+ssh-agent | tee ~/.ssh/agent.env  # once
+source ~/.ssh/agent.env           # multiple terminals
+```
+
 ## Tmux
 
 ```bash
