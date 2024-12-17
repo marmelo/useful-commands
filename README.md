@@ -154,7 +154,7 @@ ORDER BY query_start desc;
 
 ```sql
 # show table statistics
-SELECT relname, seq_scan, idx_scan, n_tup_ins, n_tup_upd, n_tup_hot_upd, n_tup_del, last_vacuum, last_autovacuum
+SELECT relname, seq_scan, idx_scan, n_tup_ins, n_tup_upd, n_tup_hot_upd, n_tup_del, n_tup_newpage_upd, autovacuum_count, last_autovacuum
 FROM pg_stat_user_tables
 ORDER BY n_tup_ins desc;
 ```
@@ -163,7 +163,7 @@ ORDER BY n_tup_ins desc;
 # terminate connections
 SELECT pg_terminate_backend(pg_stat_activity.pid)
 FROM pg_stat_activity
-WHERE pg_stat_activity.datname = '<database name>';
+WHERE datname = '<database name>';
 ```
 
 ```sql
