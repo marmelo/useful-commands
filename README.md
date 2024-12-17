@@ -146,10 +146,17 @@ nmap --dns-servers 8.8.4.4,8.8.8.8 -sL 209.132.183.105/24
 
 ```sql
 # show running queries
-SELECT procpid, age(clock_timestamp(), query_start), usename, current_query 
+SELECT pid, age(clock_timestamp(), query_start), usename, query
 FROM pg_stat_activity 
-WHERE current_query != '<IDLE>' AND current_query NOT ILIKE '%pg_stat_activity%' 
+WHERE query != '<IDLE>' AND query NOT ILIKE '%pg_stat_activity%' 
 ORDER BY query_start desc;
+```
+
+```sql
+# show table statistics
+SELECT relname, seq_scan, idx_scan, n_tup_ins, n_tup_upd, n_tup_hot_upd, n_tup_del, last_vacuum, last_autovacuum
+FROM pg_stat_user_tables
+ORDER BY n_tup_ins desc;
 ```
 
 ```sql
