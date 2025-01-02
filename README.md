@@ -6,6 +6,7 @@
 - [Java](#java)
 - [Mail](#mail)
 - [Nmap](#nmap)
+- [NVMe](#nvme)
 - [PostgreSQL](#postgresql)
 - [Sed](#sed)
 - [SSH](#ssh)
@@ -139,6 +140,20 @@ nmap -sV -p22,80,443 192.168.1.1/24
 ```bash
 # reverse lookup subnet
 nmap --dns-servers 8.8.4.4,8.8.8.8 -sL 209.132.183.105/24
+```
+
+## NVMe
+
+```bash
+# get info
+nvme list
+nvme id-ctrl /dev/nvme0n1 -H
+```
+
+```bash
+# secure erase
+# (first check if "Crypto Erase Supported as part of Secure Erase" is available)
+nvme format /dev/nvme0n1 --ses 2
 ```
 
 
